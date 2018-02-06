@@ -1,0 +1,16 @@
+/* Structural Pseudo-classes------------------ */
+
+/* This is an NTH-CHILD selector that targets the 4th div in its parent.
+div:nth-child(4) { 
+  background: #52bab3;
+  color: white;
+} If you were to add an h1 to html as the 4th child of section, it would screw up this code. You'd have to change the above rule to "nth-child(5)" in order to still target the 4th div. Instead, try nth-of-type, the next rule, for lower maintenance!
+*/
+
+/* This is an NTH-OF-TYPE Pseudo-class. This targets an element based upon the element's position within a parent element BUT ONLY IF IT IS A SPECIFIC TYPE OF ELEMENT. So, this targets the 4th div inside a parent's element; it doesn't matter how many child elements come before the 4th div, it's always going to target the 4th div. */
+div:nth-of-type(4) {
+  background: #52bab3;
+  color: white;
+}
+/* Instead of "(4)", you could use "(even)" or "(odd)" and so on.
+   You could also use "nth-last-of-type(1)" instead of "nth-of-type(6)" to target the last div. Seems useful. Or, if you were to type "nth-last-of-type(3)", it would select the 3rd div from the bottom, 4 ... doesn't seem super useful ... just showing you how that works. */
